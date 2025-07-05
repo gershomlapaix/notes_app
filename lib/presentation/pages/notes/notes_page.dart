@@ -12,11 +12,12 @@ import 'package:notes_app/presentation/widgets/loading_widget.dart';
 import 'package:notes_app/presentation/widgets/note_card.dart';
 
 class NotesPage extends StatefulWidget {
+  const NotesPage({super.key});
   @override
-  _NotesPageState createState() => _NotesPageState();
+  NotesPageState createState() => NotesPageState();
 }
 
-class _NotesPageState extends State<NotesPage> {
+class NotesPageState extends State<NotesPage> {
   @override
   void initState() {
     super.initState();
@@ -24,10 +25,8 @@ class _NotesPageState extends State<NotesPage> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final user = FirebaseAuth.instance.currentUser;
       if (user != null) {
-        print('User authenticated: ${user.uid}'); // Debug log
         context.read<NotesBloc>().add(FetchNotes());
       } else {
-        print('No authenticated user found'); // Debug log
         CustomSnackBar.showError(context, 'Please sign in to view notes');
       }
     });
@@ -159,7 +158,7 @@ class _NotesPageState extends State<NotesPage> {
   void _showAddNoteDialog(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) => AddEditNoteDialog(),
+      builder: (context) => const AddEditNoteDialog(),
     );
   }
 

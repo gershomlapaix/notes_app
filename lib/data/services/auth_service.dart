@@ -12,12 +12,19 @@ class AuthService {
       String password,
       ) async {
     try {
-      return await _firebaseAuth.signInWithEmailAndPassword(
+      // print('🔐 Attempting sign in for: $email');
+      final credential = await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
+      // print('✅ Sign in successful for: ${credential.user?.email}');
+      return credential;
     } on FirebaseAuthException catch (e) {
+      // print('❌ Firebase Auth Error: ${e.code} - ${e.message}');
       throw _handleAuthException(e);
+    } catch (e) {
+      // print('❌ General Auth Error: $e');
+      throw 'An unexpected error occurred during sign in.';
     }
   }
 
@@ -26,33 +33,55 @@ class AuthService {
       String password,
       ) async {
     try {
-      return await _firebaseAuth.createUserWithEmailAndPassword(
+      // print('📝 Attempting sign up for: $email');
+      final credential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      // print('✅ Sign up successful for: ${credential.user?.email}');
+      return credential;
     } on FirebaseAuthException catch (e) {
+      // print('❌ Firebase Auth Error: ${e.code} - ${e.message}');
       throw _handleAuthException(e);
+    } catch (e) {
+      // print('❌ General Auth Error: $e');
+      throw 'An unexpected error occurred during sign up.';
     }
   }
 
   Future<void> signOut() async {
-    await _firebaseAuth.signOut();
+    try {
+      // print('🚪 Signing out user: ${currentUser?.email}');
+      await _firebaseAuth.signOut();
+      // print('✅ Sign out successful');
+    } catch (e) {
+      // print('❌ Sign out error: $e');
+      throw 'Failed to sign out. Please try again.';
+    }
   }
 
   String _handleAuthException(FirebaseAuthException e) {
     switch (e.code) {
       case 'user-not-found':
-        return 'No user found for this email.';
+        return 'No user found for this email address.';
       case 'wrong-password':
-        return 'Wrong password provided.';
+        return 'Wrong password provided for this email.';
       case 'email-already-in-use':
-        return 'An account already exists for this email.';
+        return 'An account already exists for this email address.';
       case 'weak-password':
-        return 'The password is too weak.';
+        return 'The password provided is too weak.';
       case 'invalid-email':
         return 'The email address is not valid.';
+      case 'user-disabled':
+        return 'This user account has been disabled.';
+      case 'too-many-requests':
+        return 'Too many failed attempts. Please try again later.';
+      case 'operation-not-allowed':
+        return 'Email/password accounts are not enabled.';
+      case 'invalid-credential':
+        return 'The provided credentials are invalid.';
       default:
-        return 'An error occurred during authentication.';
+        return 'Authentication failed: ${e.message ?? 'Unknown error'}';
     }
   }
 }

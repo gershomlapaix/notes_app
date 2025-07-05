@@ -13,10 +13,11 @@ import 'package:notes_app/presentation/pages/notes/notes_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -37,13 +38,15 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: AuthWrapper(),
+        home: const AuthWrapper(),
       ),
     );
   }
 }
 
 class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
@@ -59,11 +62,11 @@ class AuthWrapper extends StatelessWidget {
         }
 
         if (snapshot.hasData && snapshot.data != null) {
-          print('✅ User authenticated via StreamBuilder');
-          return NotesPage();
+          // print('✅ User authenticated via StreamBuilder');
+          return const NotesPage();
         } else {
-          print('❌ No user, showing LoginPage');
-          return LoginPage();
+          // print('❌ No user, showing LoginPage');
+          return const LoginPage();
         }
       },
     );

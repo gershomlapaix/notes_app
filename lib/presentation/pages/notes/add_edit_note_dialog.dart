@@ -7,13 +7,13 @@ import 'package:notes_app/presentation/bloc/notes/notes_event.dart';
 class AddEditNoteDialog extends StatefulWidget {
   final NoteModel? note;
 
-  const AddEditNoteDialog({Key? key, this.note}) : super(key: key);
+  const AddEditNoteDialog({super.key, this.note});
 
   @override
-  _AddEditNoteDialogState createState() => _AddEditNoteDialogState();
+  AddEditNoteDialogState createState() => AddEditNoteDialogState();
 }
 
-class _AddEditNoteDialogState extends State<AddEditNoteDialog> {
+class AddEditNoteDialogState extends State<AddEditNoteDialog> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _titleController;
   late TextEditingController _contentController;
