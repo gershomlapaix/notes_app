@@ -1,0 +1,41 @@
+Analyzing notes_app...                                          
+
+   info - Parameters ''id', 'title', 'content', 'createdAt', and 'updatedAt'' could be super parameters - lib\data\models\note_model.dart:5:9 - use_super_parameters
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:27:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:33:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:39:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:42:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:63:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:67:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:69:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:72:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:84:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:92:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:94:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:97:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:109:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:113:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:115:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\data\services\firestore_service.dart:118:7 - avoid_print
+warning - Unused import: 'package:notes_app/presentation/bloc/auth/auth_state.dart' - lib\main.dart:9:8 - unused_import
+warning - Unused import: 'package:notes_app/presentation/bloc/notes/notes_event.dart' - lib\main.dart:11:8 - unused_import
+   info - Constructors for public widgets should have a named 'key' parameter - lib\main.dart:21:7 - use_key_in_widget_constructors
+   info - Constructors for public widgets should have a named 'key' parameter - lib\main.dart:48:7 - use_key_in_widget_constructors
+   info - Don't invoke 'print' in production code - lib\main.dart:54:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\main.dart:55:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\main.dart:56:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\main.dart:67:11 - avoid_print
+   info - Don't invoke 'print' in production code - lib\main.dart:70:11 - avoid_print
+   info - Constructors for public widgets should have a named 'key' parameter - lib\presentation\pages\auth\login_page.dart:9:7 - use_key_in_widget_constructors
+   info - Invalid use of a private type in a public API - lib\presentation\pages\auth\login_page.dart:11:3 - library_private_types_in_public_api
+   info - Parameter 'key' could be a super parameter - lib\presentation\pages\notes\add_edit_note_dialog.dart:10:9 - use_super_parameters
+   info - Invalid use of a private type in a public API - lib\presentation\pages\notes\add_edit_note_dialog.dart:13:3 - library_private_types_in_public_api
+   info - Constructors for public widgets should have a named 'key' parameter - lib\presentation\pages\notes\notes_page.dart:15:7 - use_key_in_widget_constructors
+   info - Invalid use of a private type in a public API - lib\presentation\pages\notes\notes_page.dart:17:3 - library_private_types_in_public_api
+   info - Don't invoke 'print' in production code - lib\presentation\pages\notes\notes_page.dart:28:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\presentation\pages\notes\notes_page.dart:31:9 - avoid_print
+   info - Use 'const' with the constructor to improve performance - lib\presentation\pages\notes\notes_page.dart:163:29 - prefer_const_constructors
+   info - Parameter 'key' could be a super parameter - lib\presentation\widgets\loading_widget.dart:4:9 - use_super_parameters
+   info - Parameter 'key' could be a super parameter - lib\presentation\widgets\note_card.dart:9:9 - use_super_parameters
+  error - The constructor being called isn't a const constructor - test\widget_test.dart:16:29 - const_with_non_const
+

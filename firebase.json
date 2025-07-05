@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "notesapp-4cf30",
+          "appId": "1:816746234784:android:7a27251fb3b4e002f89ac5",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "notesapp-4cf30",
+          "configurations": {
+            "android": "1:816746234784:android:7a27251fb3b4e002f89ac5",
+            "ios": "1:816746234784:ios:0e5199deaecdcf77f89ac5",
+            "macos": "1:816746234784:ios:0e5199deaecdcf77f89ac5",
+            "web": "1:816746234784:web:48ddf0c9eb79c505f89ac5",
+            "windows": "1:816746234784:web:74a433babeb008a4f89ac5"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "singleProjectMode": true
+  }
+}
